@@ -1,0 +1,214 @@
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+
+class node
+{
+    private:
+        string name;
+        node* left;
+        node * right;
+    public:
+        node(string name)
+        {
+            this->name=name;
+            left=NULL;
+            right=NULL;
+        }
+        string getname()
+        {
+            return name;
+        }
+        node * getleft()
+        {
+            return left;
+        }
+         node * getright()
+        {
+            return right;
+        }
+        void setright(node * right)
+        {
+            this->right=right;
+        }
+          void setleft(node * left)
+        {
+            this->left=left;
+        }
+        
+        
+};
+
+
+class Tree
+{
+    private:
+        node *root;
+    public:
+        Tree()
+        {
+            root=NULL;
+        }
+        node * getroot()
+        {
+            return this->root;
+        }
+        
+        node * check(string name)
+        {
+            return check(this->root,name);
+        }
+        
+        
+        
+        void insert()
+        {
+            string name;
+            int n=0;
+            cin>>name;
+            while(name!="END")
+            {
+                if(this->root==NULL)
+                {
+                    node * Node=new node(name);
+                    this->root=Node;
+                    continue;
+                }
+                else if(root->getleft()==NULL && root->getright()==NULL)
+                {
+                    cin>>n;
+                    if(n==2)
+                    {
+                        cin>>name;
+                        node * Node1=new node(name);
+                        root->setleft(Node1);
+                        cin>>name;
+                        node * Node2=new node (name);
+                        root->setright(Node2);
+                        continue;
+                    }
+                    else if(n==1)
+                    {
+                        cin>>name;
+                        node * Node3=new node(name);
+                        root->setleft(Node3);
+                        root->setright(NULL);
+                        continue;
+                    }
+                    else if(n>2 && n<1)
+                    {
+                        cout<<"wrong input enter either 1 or 2"<<endl;
+                        continue;
+                    }
+                }
+                else if(root!=NULL)
+                {
+                    cin>>name;
+                    if(name=="END")
+                    break;
+                
+                else if(root->getleft()!=NULL)
+                {
+                    node * pre=check(name);
+                    if(pre!=NULL)
+                    {
+                        cin>>n;
+                        if(n==2)
+                        {
+                            cin>>name;
+                            node * Node1=new node(name);
+                            pre->setleft(Node1);
+                            cin>>name;
+                            node * Node2=new node (name);
+                            pre->setright(Node2);
+                            continue;
+                        }
+                        else if(n==1)
+                        {
+                            cin>>name;
+                            node * Node1=new node(name);
+                            pre->setleft(Node1);
+                            pre->setright(NULL);
+                            continue;
+                        }
+                        else if(n>2 && n<1)
+                       {
+                             cout<<"wrong input enter either 1 or 2"<<endl;
+                            continue;
+                       }
+                    }
+                    else 
+                    {
+                        cout<<"Name not found enter again"<<endl;
+                        continue;
+                    }
+                }
+            }
+        }
+       
+    }
+        
+        
+node * check(node * root,string name)
+{
+    if(root!=NULL)
+    {
+        if(root->getname()==name)
+        {
+            return root;
+        }
+        else
+        {
+            node * temp=check(root->getleft(),name);
+            if(temp==NULL)
+            {
+                temp=check(root->getright(),name);
+            }
+            return temp;
+        }
+    }
+    else 
+        return NULL;
+}
+        
+        
+        
+string checkC(string parent,string child)
+{
+    node * parentp=check(parent);
+    if(parentp==NULL)
+    {
+        return "No data";
+    }
+    else if(parentp!=NULL)
+    {
+        node * childp = check(parentp,child);
+        if(childp==NULL)
+        {
+            return "NO";
+        }
+        else if(childp!=NULL)
+        {
+            return "YES";
+        }
+    }
+}
+};
+        
+int main()
+{
+    Tree t1;
+    t1.insert();
+    int i=0;
+    cin>>i;
+    string p,c;
+    for(int j=0;j<i;j++)
+    {
+        cin>>p;
+        cin>>c;
+        cout<<t1.checkC(p,c)<<endl;
+    }
+    return 0;
+
+    
+}

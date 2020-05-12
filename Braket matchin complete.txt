@@ -1,0 +1,129 @@
+#include<iostream>
+using namespace std;
+class stack
+{
+    private:
+        int *store;
+        int size;
+        int top;
+    public:
+        stack()
+        {
+            size=0;
+            top=-1;
+            store=new int;
+        }
+        stack(int size)
+        {
+                this->size=size;
+                store=new int [size];
+                top=-1;
+        }
+        ~stack()
+        {
+            delete [] store;
+        }
+        int isEmpty()
+        {
+            if(top==-1)
+                return 1;
+            return 0;
+        }
+        int isFull()
+        {
+            if(top==(size-1))
+                return 1;
+            return 0;
+        }
+        void Push(char data)
+        {
+            if(!isFull())
+            {
+                store[++top]=data;
+            }
+        }
+        char Pop()
+        {
+            if(!isEmpty())
+            {
+                int data=store[top--];
+                return data;
+            }
+        }
+};
+int main()
+{
+    string cmd;
+    char ch1,ch2;
+    int N,i,j;
+    cin>>N;
+    for(i=0;i<N;i++)
+    {
+        cin>>cmd;
+        stack s(cmd.length());
+        int p=0,q=0,r=0,x=0,flag=0;
+        for(j=0;j<cmd.length();j++)
+        {
+             ch1=cmd[j];
+            if(ch1=='(' || ch1=='{' || ch1=='[')
+            {
+                s.Push(ch1);
+                ++p;
+                ++x;
+            }
+            else if(ch1==')' || ch1=='}' || ch1==']')
+            {
+                if(s.isEmpty())
+                {
+                    r=1;
+                    break;
+                }
+                if(ch1==')')
+                {
+                     ch2=s.Pop();
+                    if(ch2=='(')
+                        --p;
+                    else
+                    {
+                        flag=1;
+                        break;
+                    }
+                        
+                }
+                if(ch1=='}')
+                {
+                     ch2=s.Pop();
+                    if(ch2=='{')
+                        --p;
+                    else
+                    {
+                        flag=1;
+                        break;
+                    }
+                        
+                }
+                if(ch1==']')
+                {
+                     ch2=s.Pop();
+                    if(ch2=='[')
+                        --p;
+                    else
+                    {
+                        flag=1;
+                        break;
+                    }
+                        
+                }
+            }
+        }
+        if(r==1)
+            cout<<"TOO MANY CLOSING"<<endl;
+        else if(flag==1)
+            cout<<"MISSMATCH"<<endl;
+             else if(p==0 && (s.isEmpty()))
+                cout<<"VALID"<<endl;
+                  else
+                    cout<<"TOO MANY OPENING"<<endl;
+    }
+    return 0;
+}

@@ -1,0 +1,81 @@
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+class Node*
+{
+        private:
+                int data;
+                Node* next;
+        public:
+               Node()
+               {
+               }
+               Node(int data)
+               {
+                    this->data=data;
+               }
+               int getData()
+               {
+                    return data;
+               }
+               Node* getNext()
+               {
+                    return next;
+               }
+               void setNext(Node* next)
+               {
+                    this->next=next;
+               }
+};
+class LinkList
+{
+    private:
+            Node* head;
+            Node* cur;
+            Node* next;
+            Node* prev;
+    public:
+            LinkList()
+            {
+                head=NULL;
+                cur=NULL;
+                next=NULL;
+                prev=NULL;
+            }
+            void Insert(int data)
+            {
+                Node* node=new Node(data);
+                if(head==NULL)
+                {
+                    head=node;
+                }
+                else
+                {
+                    node->setNext(head);
+                    head=node;
+                }
+            }
+            Node* Reversed()
+            {
+                cur=head;
+                next=cur->getNext;
+            }
+};
+
+int main() {
+    LinkList l;
+    int data;
+    while(1)
+    {
+        cin>>data;
+        if(data!=0)
+        {
+            l.Insert(data);
+        }
+        else
+            break;
+    }
+    return 0;
+}

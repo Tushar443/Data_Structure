@@ -1,0 +1,271 @@
+#include <iostream>
+#include <math.h>
+#include "queue.cpp"
+
+using namespace std;
+
+class Node{
+
+    private:
+        int data;
+        Node* left;
+        Node* right;
+    public:
+
+        Node(){
+            left = right = NULL;
+        }
+        Node(int data){
+            this->data = data;
+            left = right = NULL;
+        }
+
+        void print(){
+            cout<<data<<"->";
+        }
+
+        int getData(){
+            return data;
+        }
+        void setLeft(Node* left){
+            this->left = left;
+        }
+        void setRight(Node* right){
+            this->right = right;
+        }
+        Node* getLeft(){
+            return left;
+        }
+        Node* getRight(){
+            return right;
+        }	
+};
+
+class BST{
+    Node *root;
+    public:
+    BST(){
+        root = NULL;
+    }
+
+    void insert(int data){
+        Node *node = new Node(data);
+        if( root == NULL)
+            root = node;
+        else{
+            Node* temp = root;
+            Node* prev = NULL;
+            while( temp != NULL){
+                prev = temp;
+                if( data <= temp->getData())
+                    temp= temp->getLeft();
+                else
+                    temp = temp->getRight();		
+            }
+            if( data <= prev->getData())
+                prev->setLeft( node );	
+            else
+                prev->setRight( node );
+        }
+
+    }
+
+    void BFT(){
+
+        queue<Node*> store(100);
+
+        store.enqueue( root );
+
+        while( !store.isEmpty() ){
+
+            Node *node = store.dequeue();
+
+            node->print();
+
+            if( node->getLeft() != NULL ){
+                store.enqueue( node->getLeft() );
+            }   
+            if( node->getRight() != NULL ){
+                store.enqueue( node->getRight() );
+            }   
+        }
+        cout<<"--"<<endl;
+    }
+
+
+    void inorder(Node *root){
+        if( root != NULL ){
+            inorder( root->getLeft());
+            root->print();
+            inorder( root->getRight());
+        }
+    }        
+
+    Node* findParent(int data){
+        Node *temp = root;
+        while( temp != NULL){
+
+            if( temp->getLeft() != NULL ){
+                if( data == temp->getLeft()->getData())
+                    return temp;
+
+
+            }
+            if( temp->getRight() != NULL ){
+                if( data == temp->getRight()->getData())
+                    return temp;
+
+
+            }
+            if( data < temp->getData() )
+                temp = temp->getLeft();
+            else 
+                temp = temp->getRight();
+        } 
+        return NULL;    
+    }
+
+    Node* search(int data){
+        Node *temp = root;
+        while( temp != NULL){
+            if( temp->getData() == data ){
+                return temp;           
+            }
+            if( data < temp->getData() )
+                temp = temp->getLeft();
+            else 
+                temp = temp->getRight();
+        } 
+        return NULL;
+    }
+
+    void deleteN(int data){
+
+        Node* node = search( data );
+
+        if( node == NULL){
+            cout<<"Data not Found"<<endl;
+        }else{
+
+            if( node->getLeft() != NULL && 
+                    node->getRight() != NULL ){
+                /* two child */
+
+
+
+            }else if( node->getLeft() == NULL && 
+                    node->getRight() == NULL ){
+                /* zero child */
+
+                Node* parent = findParent( data );
+                if( parent == NULL ){
+                    root = NULL;
+                }
+                else{
+                    if( data <= parent->getData() )
+                        parent->setLeft(NULL);
+                    else                      
+                        parent->setRight(NULL);
+                    delete node;    
+                }
+
+            }else{
+                /* one child */
+                Node* parent = findParent( data );
+                if( parent == NULL ){
+                    if( node->getLeft() != NULL)  
+                        root = node->getLeft();
+                    else       
+                        root = node->getRight();
+                }
+                else{
+                    if( data <= parent->getData() ){
+                        if( node->getLeft() != NULL)
+                            parent->setLeft(node->getLeft());                        else
+                                parent->setLeft(node->getRight());
+
+                    }else{
+                        if( node->getLeft() != NULL)
+                            parent->setRight(node->getLeft());                        else
+                                parent->setRight(node->getRight());
+                    }
+                    delete node;
+                }
+            } 
+        }
+    }
+
+    int height(){
+        return height(root);
+    }
+
+    int height(Node *root){
+        if( root == NULL)
+            return 0;
+        return max( height( root->getLeft() ) , height( root->getRight() ) ) + 1;
+
+    }
+
+    Node *findAVL(Node *root){
+        if( root != NULL){
+            int bf = abs( height( root->getLeft()) - height( root->getRight()));
+            if( bf > 1)
+                return root;
+            Node *node = findAVL( root->getLeft() );   
+            if( node != NULL)
+                return node;
+            node = findAVL( root->getRight() );   
+            if( node != NULL)
+                return node;  
+        }
+        return NULL;
+    }   
+
+    void rotate(){
+        Node *node = findAVL( root );
+        if( node == NULL){
+            cout<<"NO AVL Violation!"<<endl;
+        }else{
+            cout<<"AVL violation at : "<<node->getData()<<endl;
+            int left = height( node->getLeft() );
+            int right = height( node->getRight() );
+            if( left > right){
+                cout<<"Right Rotation require"<<endl;
+            }else{                 
+                cout<<"Left Rotation require"<<endl;
+            }
+        }           
+
+    }
+    void inorder(){
+        inorder(root);                 
+        cout<<"--"<<endl;
+    }
+};
+
+int main(){
+    BST bst;
+    while(1){
+        string cmd;
+        cin>>cmd;
+        if( cmd == "ex"){
+            break;
+        }else if( cmd == "in"){
+            int data;
+            cin>>data;
+            bst.insert(data);
+            bst.rotate();
+        }else if( cmd == "DL"){
+            int data;
+            cin>>data;
+            bst.deleteN( data );
+        }else if( cmd == "BFT"){
+            bst.BFT();
+            bst.inorder();
+        }else if( cmd == "H"){
+            cout<<"Height: "<<bst.height()<<endl;
+        }
+    }	
+
+    return 0;
+}

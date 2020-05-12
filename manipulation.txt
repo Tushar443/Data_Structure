@@ -1,0 +1,188 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+class Node
+{
+    private:
+            int age;
+            char name[20];
+            Node* next;
+    public:
+            Node()
+            {
+                age=0;
+                name[20]='\0';
+                next=new Node;
+            }
+            Node(int age,char name[])
+            {
+                this->age=age;
+                strcpy(this->name,name);
+                next=NULL;
+            }
+            int getAge()
+            {
+                return age;
+            }
+            char* getName()
+            {
+                return name;
+            }
+            Node* getNext()
+            {
+                return next;
+            }
+            void setNext(Node* next)
+            {
+                this->next=next;
+            }
+};
+class LinkList
+{
+    private:
+            Node* head;
+    public:
+            LinkList()
+            {
+                head=NULL;
+            }
+            ~LinkList()
+            {
+                Node* temp=head;
+                while(head!=NULL)
+                {
+                    head=head->getNext();
+                    delete temp;
+                }
+            }
+            void InsertB(Node* node)
+            {
+                if(head==NULL)
+                {
+                    head=node;
+                }
+                else
+                {
+                    node->setNext(head);
+                    head=node;
+                }
+            }
+            void InsertAfter(Node* temp,Node* node)
+            {
+                if(head->getNext()==NULL)
+                {
+                    head->setNext(node);
+                }
+                else
+                {
+                    node->setNext(temp->getNext());
+                    temp->setNext(node);
+                }
+                
+            }
+            void Insert(int age,char name[])
+            {
+                Node* node=new Node(age,name);
+                if(head==NULL)
+                {
+                    head=node;
+                }
+                else
+                {
+                    Node *temp=head;
+                    if((temp->getAge())>(node->getAge()))
+                    {
+                        InsertB(node);
+                    }
+                    else
+                    {
+                        if(temp->getNext()!=NULL)
+                        {
+                            while(temp->getNext()!=NULL && (temp->getNext()->getAge())<=(node->getAge()))
+                            {
+                                temp=temp->getNext();
+                            }
+                            InsertAfter(temp,node);
+                        }
+                        else
+                            temp->setNext(node);
+                    }
+                }
+            }
+            
+            void Remove(int n)
+            {
+                int count=1;
+                Node*temp=head;
+                if(head!=NULL)
+                {
+                    if(n==1)
+                    {
+                        head=head->getNext();
+                    }
+                    else
+                    {
+                        while(count!=(n-1))
+                        {
+                            temp=temp->getNext();
+                            count++;
+                        }
+                        temp->setNext(temp->getNext()->getNext());
+                    }
+                }
+            }
+            int Print(int n)
+            {
+                if(head!=NULL)
+                {
+                    int count=1;
+                    Node*temp=head;
+                    if(temp!=NULL)
+                    {
+                      while(temp!=NULL && count!=n)
+                      {
+                          temp=temp->getNext();
+                          count++;
+                      }
+                      cout<<temp->getName()<<" "<<temp->getAge()<<endl;
+                    }
+                }
+                else return 0;
+            }
+};
+int main()
+{
+    LinkList l;
+    string cmd;
+    char name[20];
+    int age,N,c=0;
+    while(1)
+    {
+        cin>>cmd;
+        if(cmd=="insert")
+        {
+            c++;
+            cin>>name;
+            cin>>age;
+            l.Insert(age,name);
+        }
+        if(cmd=="print")
+        {
+           
+            cin>>N;
+             if(c>=N)
+            l.Print(N);
+        }
+        if(cmd=="remove")
+        {
+            cin>>N;
+            if(c>=N)
+            l.Remove(N);
+        }
+        if(cmd=="stop")
+        {
+            break;
+        }
+    }
+    return 0;
+}

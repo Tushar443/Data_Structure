@@ -1,0 +1,165 @@
+#include<iostream>
+#include<stdlib.h>
+int arr[50];
+int arr2[50];
+int v=0;
+int p=0;
+using namespace std;
+class Node
+{
+    private:
+        int data;
+        Node * left;
+        Node * right;
+        Node * root;
+    public:
+        Node(int data)
+        {
+            this->data=data;
+            left=NULL;
+            root=NULL;
+            right=NULL;
+        }
+        int getdata()
+        {
+            return data;
+        }
+        Node * getleft()
+        {
+            return left;
+        }
+        Node * getright()
+        {
+            return right;
+        }
+        void setleft(Node * left)
+        {
+            this->left=left;
+        }
+        void setright(Node * right)
+        {
+            this->right=right;
+        }
+       
+};
+class Tree
+{
+    private:
+        Node * root;
+    public:
+        Tree()
+        {
+            root=NULL;
+        }
+        /* Node * getroot()
+        {
+            return root;
+        }*/
+        
+        void insert(int data)
+        {
+            Node * node =new Node(data);
+            Node * temp=root;
+            Node * prev;
+            if(root==NULL)
+            {
+                root=node;
+            }
+           else
+           {
+                 while(temp!=NULL)
+                 {
+                    prev=temp;
+                    if(data<=temp->getdata())
+                    {
+                        temp=temp->getleft();
+                    }
+                    else
+                    temp=temp->getright();
+                }
+                  
+                       if(data<=prev->getdata())
+                       {
+                               prev->setleft(node);
+                       }
+                      else
+                       {
+                              prev->setright(node);
+                       }
+           }
+        
+                
+        }
+ 
+    int inorder(Node * root)
+    {
+        if(root==NULL)
+        {
+            return 0;
+        }
+        
+        inorder(root->getleft());
+        arr[v]=root->getdata();
+        v++;
+        //cout<<"\n"<<root->getdata()<<" ";
+        inorder(root->getright());
+        
+        return 0;
+    }
+    
+   
+   int preorder(Node * root)
+   {
+        if(root==NULL)
+        {
+            return 0;
+        }
+        arr2[p]=root->getdata();
+        p++;
+       //cout<<"\n"<<root->getdata()<<" ";
+        preorder(root->getleft());
+        preorder(root->getright());
+        
+        return 0;
+    }
+    
+   
+    int campare()
+    {
+        for(int i=0; i < p ; i++)
+        {
+            if(arr[i]==arr2[i])
+            {
+                cout<<i+1<<" "<<arr[i]<<endl;
+            }
+        }
+    }
+   
+    void show()
+    {
+        inorder(root);
+        preorder(root);
+        campare();
+    }
+     
+};
+
+int main()
+{
+    int data;
+    Tree t1;
+    while(data!=-1)
+    {
+        cin>>data;
+        if(data!=-1)
+        {
+            t1.insert(data);
+        }
+    }
+  
+    t1.show();
+   
+ 
+    return 0;
+   
+}

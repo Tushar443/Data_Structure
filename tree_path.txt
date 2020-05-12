@@ -1,0 +1,161 @@
+#include<iostream>
+using namespace std;
+class Node
+{
+    private:
+            int data;
+            Node *right;
+            Node *left;
+    
+    public:
+            Node(int data)
+            {
+                this->data=data;
+                right=NULL;
+                left=NULL;
+            }
+            
+            int getdata()
+            {
+                return data;
+            }
+            
+            Node* getright()
+            {
+                return right;
+            }
+            
+            Node* getleft()
+            {
+                return left;
+            }
+            
+            void setright(Node *right)
+            {
+                this->right=right;
+            }
+            
+            void setleft(Node *left)
+            {
+                this->left=left;
+            }
+};
+
+class BST
+{
+    private:
+            Node* root;
+    
+    public:
+            BST()
+            {
+                root=NULL;
+            }
+            
+            void insert(int data)
+            {
+               // cout<<data<<endl;
+                Node *node=new Node(data);
+                
+                if(root==NULL)
+                {
+                    root=node;
+                }                
+                else
+                {
+                    Node *temp=root;
+                    Node *prev;
+                
+                    while(temp!=NULL)
+                    {
+                        
+                        if(data<=temp->getdata())
+                        {
+                            prev=temp;
+                            temp=temp->getleft();
+                        }
+                        else
+                        {
+                            prev=temp;
+                            temp=temp->getright();
+                        }
+                    }  
+                    
+                  if(data<=prev->getdata())
+                  {
+                    prev->setleft(node);
+                  }
+                 else
+                  {
+                    prev->setright(node);                    
+                  } 
+                }  
+            }
+            
+            void print(int data)
+            {
+                //cout<<data<<endl;
+                Node *temp=root;
+                 int k=0;
+                string st[10];
+                st[k]="Root";
+                while(temp!=NULL)
+                {
+                    if(data<=temp->getdata())
+                    {
+                        if(data==temp->getdata())
+                        {
+                            break;
+                        }
+                        st[++k]=" L";
+                        temp=temp->getleft();
+                    }
+                    else if(data>=temp->getdata())
+                    {
+                        if(data==temp->getdata())
+                        {
+                            break;
+                        }
+                        st[++k]=" R";
+                        temp=temp->getright();
+                    }
+                }
+                st[++k]="\0";
+                if(temp==NULL)
+                {
+                    cout<<"Not Found"<<endl;
+                }
+                else
+                {
+                    for(int m=0;m<=k;m++)
+                    {
+                        cout<<st[m];
+                    }
+                    cout<<endl;
+                }
+            }
+            
+};
+
+int main()
+{
+    int cmd;
+    BST t;
+    while(1)
+    {
+        cin>>cmd;
+        if(cmd==-1)
+            break;
+        t.insert(cmd);
+    }
+    int a,b;
+    cin>>a;
+    
+    for(int i=0;i<a;i++)
+    {
+        cin>>b;
+        t.print(b);
+    }
+    
+    return 0;
+}
