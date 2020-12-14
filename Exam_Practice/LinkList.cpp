@@ -109,8 +109,7 @@ void insertBeforeData(int newData,int AfterData){
 
             node->setNext(temp->getNext());
             temp->setNext(node);
-    }
-    
+    }  
 }
     
     void Dispaly(){

@@ -1,4 +1,4 @@
-#include<iostrem>
+#include<iostream>
 using namespace std;
 class Node
 {
@@ -9,7 +9,7 @@ class Node
         Node(int data){
             this->data=data;
         }
-        node(){}
+        Node(){}
         void setNext(Node* next)
         {
             this->next=next;
@@ -23,8 +23,7 @@ class Node
         int getData(){
             return data;
         }
-}
-
+};
 class  Tree
 {
 private:
@@ -46,5 +45,7 @@ public:
 
 int main()
 {
+    
+    
     return 0;
 }
