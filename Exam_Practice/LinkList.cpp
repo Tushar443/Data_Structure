@@ -9,7 +9,7 @@ class Node{
         Node(int data)
         {
             this->data = data;
-            next=NULL;;
+            next=NULL;
         }
         Node(){
             next=NULL;
@@ -114,12 +114,12 @@ void insertBeforeData(int newData,int AfterData){
     
     void Dispaly(){
         Node* temp = root;
-        while (temp->getNext()!=NULL)
+        while (temp!=NULL)
         {
-            cout<<temp->getData()<<endl;
+            cout<<temp->getData()<<"=>"<<endl;
             temp=temp->getNext();
         }
-         cout<<temp->getData()<<endl;
+         //cout<<temp->getData()<<endl;
     }
 };
 
