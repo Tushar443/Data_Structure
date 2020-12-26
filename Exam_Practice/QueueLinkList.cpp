@@ -61,8 +61,10 @@ class QueueLik{
             }else{
                 Node* temp= rear;
                  if(front == rear && front !=NULL && rear!=NULL){
-                    return front;
+                    temp1 = front;
                     front=rear=NULL;
+                    return temp1;
+                    
                 }
                 while (front != temp->getNext())
                 {
@@ -92,9 +94,9 @@ int main(){
     cout<<q.Dequeue()->getData()<<endl;
     cout<<q.Dequeue()->getData()<<endl;
     cout<<q.Dequeue()->getData()<<endl;
-    // cout<<q.Dequeue()->getData()<<endl;
-    // cout<<q.Dequeue()->getData()<<endl;
-    // cout<<q.Dequeue()->getData()<<endl;
+    cout<<q.Dequeue()->getData()<<endl;
+    cout<<q.Dequeue()->getData()<<endl;
+    cout<<q.Dequeue()->getData()<<endl;
 
     return 0;
 }
