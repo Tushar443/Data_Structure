@@ -4,7 +4,7 @@ class Queue{
 
 private :
     int front;
-    int rare;
+    int rear;
     int* store;
     int size;
 
@@ -14,7 +14,7 @@ public :
         this->size=size;
         store = new int[size];
         front = -1;
-        rare= -1;
+        rear= -1;
     }
     void enqueue(int data){
         if(isFull()){
@@ -28,12 +28,12 @@ public :
     int dequeue(){
         if(isEmpty()){
             cout<<"Queue is Empty"<<endl;
-            front=rare=-1;
+            front=rear=-1;
             return 0;
         }
         else
         {
-             int data =store[++rare];
+             int data =store[++rear];
              return data;    
         } 
     }
@@ -44,7 +44,7 @@ public :
         return false;
     }
     bool isEmpty(){
-        if(front == rare){
+        if(front == rear){
             return true;
         }
         return false;

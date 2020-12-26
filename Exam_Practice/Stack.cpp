@@ -1,5 +1,7 @@
 #include<iostream>
 using namespace std;
+static int s=10;
+
 
 class stack{
 private :
@@ -53,7 +55,10 @@ public :
 
 int main(){
 
-stack s1(5);
+
+int s;
+cin>> s;
+stack s1(s);
 
 s1.push(34);
 s1.push(45);
