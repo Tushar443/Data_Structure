@@ -15,6 +15,7 @@ int main(){
             minLength = mid+1;
         }
         else {
+                
                 flag = 1;
                 break;
         }

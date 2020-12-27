@@ -129,52 +129,61 @@ class Tree
                     PrintLevel(root->getLeft(),level-1);
                     PrintLevel(root->getRight(),level-1);
             }
+            void Inorder(Node* root){
+                if(root != NULL){
+                    Inorder(root->getLeft());
+                    cout<<root->getData()<<" ";
+                    Inorder(root->getRight());
+                }
+            }
             void Traversal()
             {
                 cout<<" Inoreder"<<endl;
-                Inprint(root);
-                cout<<endl;
-                cout<<"preOderder"<<endl;
-                InprintP(root);
-                cout<<endl;
+                Inorder(root);
+                
+                //Inprint(root);
+                //cout<<endl;
+                //cout<<"preOderder"<<endl;
+               // InprintP(root);
+               // cout<<endl;
             }
-            int* Inprint(Node* temp)
-            {
-               // cout<<"adress of arr  "<<arr<<endl;
-                if(temp!=NULL)
-                {
-                    if(temp->getLeft())
-                    {
-                       Inprint(temp->getLeft());
-                    }
-                   cout<<temp->getData()<<" ";
+            // int* Inprint(Node* temp)
+            // {
+            //    // cout<<"adress of arr  "<<arr<<endl;
+            //     if(temp!=NULL)
+            //     {
+            //         if(temp->getLeft())
+            //         {
+            //            Inprint(temp->getLeft());
+            //         }
+            //        cout<<temp->getData()<<" ";
 
-             //       In[p++]=temp->getData();
-                  //   cout<<arr[--index]<<"  ";
+            //  //       In[p++]=temp->getData();
+            //       //   cout<<arr[--index]<<"  ";
 
-                    if(temp->getRight())
-                    {
-                       Inprint(temp->getRight());
-                    }
-                }
-            }
-            int* InprintP(Node* temp)
-            {
-                if(temp!=NULL)
-                {
-                    cout<<temp->getData()<<" ";
-                    //Pre[q++]=temp->getData();
-                   // cout<<arr[--index]<<"  ";
-                    if(temp->getLeft()!=NULL)
-                    {
-                        InprintP(temp->getLeft());
-                    }
-                    if(temp->getRight()!=NULL)
-                    {
-                         InprintP(temp->getRight());
-                    }
-                }
-            }
+            //         if(temp->getRight())
+            //         {
+            //            Inprint(temp->getRight());
+            //         }
+            //     }
+            // }
+            // int* InprintP(Node* temp)
+            // {
+            //     if(temp!=NULL)
+            //     {
+            //         cout<<temp->getData()<<" ";
+            //         //Pre[q++]=temp->getData();
+            //        // cout<<arr[--index]<<"  ";
+            //         if(temp->getLeft()!=NULL)
+            //         {
+            //             InprintP(temp->getLeft());
+            //         }
+            //         if(temp->getRight()!=NULL)
+            //         {
+            //              InprintP(temp->getRight());
+            //         }
+            //     }
+            // }
 };
 int main()
 {
@@ -192,8 +201,8 @@ int main()
     }
 
     t.Traversal();
-    cout<<"BFT"<<endl;
-    t.BFT();
+   // cout<<"BFT"<<endl;
+    //t.BFT();
     //t.PrintM();
 
     return 0;

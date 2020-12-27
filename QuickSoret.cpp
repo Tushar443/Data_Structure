@@ -71,8 +71,8 @@ int main()
     int n;
     cin>>n;
     int X[n]={44,33,11,55,77,90,40,60,99,22,88,66};
-    QuickSort(arr,12);
+    QuickSort(X,n);
     for(int i=0;i<12;i++)
-        cout<<arr[i]<<" ";
+        cout<<X[i]<<" ";
     return 0;
 }

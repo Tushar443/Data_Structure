@@ -194,7 +194,7 @@ public:
        
         
     }
-     void FindPath (Node* root , int data){
+      void FindPath (Node* root , int data){
        if(root==NULL){
            cout<<"Not found"<<endl;
        }else
@@ -216,6 +216,56 @@ public:
             }   
        }
     }
+Node FindMax(Node* root){
+   Node temp;
+   Node RTemp,LTemp;
+   int max = root->getData();
+   if(root==NULL){
+       return INT_MIN ;
+   }
+   else if(root->getLeft()!=NULL){
+       LTemp = FindMax(root->getLeft());
+   }
+   else if(root->getRight()!=NULL){
+       RTemp= FindMax(root->getRight());
+   }
+   if(LTemp.getData() > RTemp.getData()){
+         temp= LTemp;
+   }
+   else
+   {
+       temp=RTemp;
+   }
+   return temp;
+}
+    Node* DeleteNode(Node* root,int data){
+        Node temp;
+        if(root == NULL){
+            cout<<"No Data Exist"<<endl;
+        }
+        else if(data<root->getData()){
+            root->setLeft(DeleteNode(root->getLeft(),data));
+        }
+        else if(data > root->getData()){
+            root->setRight(DeleteNode(root->getRight(),data));
+        }
+        else if(root->getLeft()!=NULL && root->getRight()!=NULL){
+            temp= FindMax(root->getLeft());
+            root->setData(temp.getData());
+            root->setLeft(DeleteNode(root->getLeft(),root->getData()));
+        }
+        else{
+            Node* temp =root;
+            if(root->getLeft() == NULL){
+                root->getRight();
+            }
+            if(root->getRight() == NULL){
+                root = root->getLeft();
+            }
+            delete temp;
+        }
+        return new Node();
+    }
 };
 
 
@@ -229,18 +279,21 @@ int main()
     // t.insertData(56);
     // t.insertData(6);
     // t.insertData(80);
+    t.insertData(4);
+    t.insertData(2);
+    t.insertData(8);
+    t.insertData(1);
     t.insertData(5);
-    t.insertData(10);
-    t.insertData(20);
-    t.insertData(11);
-    t.insertData(12);
-    t.insertData(14);
-    t.insertData(15);
+    t.insertData(9);
+    t.insertData(7);
+    t.insertData(6);
     
-     //t.Print();
-    t.LevelOrder();
 
-    t.Search(12);
+    t.DeleteNode(t.getRoot(),5);
+     t.Print();
+   // t.LevelOrder();
+
+    //t.Search(12);
     
     
     
