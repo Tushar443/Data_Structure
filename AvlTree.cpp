@@ -41,7 +41,7 @@ class BST
     private:
             Node* root;
     public:
-            Tree()
+            BST()
             {
                 root=NULL;
             }

@@ -37,7 +37,46 @@ class Node
             this->right=right;
         }
 };
-
+class Queue{
+    private :
+    int front;
+    int rear;
+    int size;
+    int* store;
+    public:
+    Queue(int size){
+        this->size=size;
+        front=rear=-1;
+        store=new int[size];
+    }
+    Queue(){
+        size=20;
+        front=rear=-1;
+        store=new int[size];
+    }
+    void Enqueue(int data){
+            store[++rear]=data;    
+    }
+    ~Queue(){delete[] store;}
+    int Dequeue(){
+            int data = store[++front];
+            return data;
+    }
+    
+    bool isEmpty(){
+        if(front == rear){
+            front = rear=-1;
+            return true;
+        }
+        return false;
+    }
+    bool isFull(){
+        if(rear == (size -1) ){
+            return true;
+        }
+        return false;
+    }
+};
 class  Tree
 {
 private:
@@ -109,66 +148,104 @@ public:
     }
     void LevelOrder(){
        
+        Queue q(10);
         
         Node* temp=root;
         if(temp!=NULL){ 
+            q.Enqueue(temp->getData());
+            while (!q.isEmpty())
+            {
+                int data = q.Dequeue();
+                cout<<data<<endl;
+              if(temp->getLeft()!=NULL){
+                q.Enqueue(temp->getLeft()->getData());
+                temp=temp->getLeft();
+              }
+                if(temp->getRight()!=NULL){
+                q.Enqueue(temp->getRight()->getData());
+                temp=temp->getRight();
+                }
+            }
             
         }
 
     }
-    
+    void Search(int data){
+        //Find(root,data);
+        FindPath(root,data);
+    }
+    void Find (Node* root , int data){
+       if(root==NULL){
+           cout<<"Not found"<<endl;
+       }else
+       {
+            if(data < root->getData()){
+                return Find(root->getLeft(),data);
+            }
+            if(data > root->getData()){
+                return Find(root->getRight(),data);
+            }
+            else
+            {
+                cout<<"Found"<<endl;
+            }
+            
+       }
+       
+        
+    }
+     void FindPath (Node* root , int data){
+       if(root==NULL){
+           cout<<"Not found"<<endl;
+       }else
+       {
+           cout<<"Root "<<endl;
 
-};
-template<class T>
-class Queue{
-    private :
-    T top ;
-    T size;
-    T* store;
-    public:
-    Queue(T size){
-        this->size=size;
-        top=-1;
-        store=new T[size];
-    }
-    Queue(){
-        size=20;
-        top=-1;
-        store=new T[size];
-    }
-    void Enqueue(T* data){
-            store[++top]=data;    
-    }
-    ~Queue(){delete[] store}
-    T Dequeue(){
-            T data = store[top--];
-            return data;
-    }
-    T isEmpty(){
-        if(top == -1){
-            return true;
-        }
-        return false;
-    }
-    T isFull(){
-        if(top == (size -1) ){
-            return true;
-        }
-        return false;
+            if(data < root->getData()){
+                Find(root->getLeft(),data);
+           cout<<"L "<<endl;
+                
+            }
+            if(data > root->getData()){
+                Find(root->getRight(),data);
+           cout<<"R "<<endl;
+            }
+            else
+            {
+                cout<<"Found"<<endl;
+            }   
+       }
     }
 };
+
+
 
 int main()
 {
    
     Tree t ;
-    t.insertData(34);
-    t.insertData(23);
-    t.insertData(56);
-    t.insertData(6);
-    t.insertData(80);
-    t.Print();
-     Queue<string> qq1();
+    // t.insertData(34);
+    // t.insertData(23);
+    // t.insertData(56);
+    // t.insertData(6);
+    // t.insertData(80);
+    t.insertData(5);
+    t.insertData(10);
+    t.insertData(20);
+    t.insertData(11);
+    t.insertData(12);
+    t.insertData(14);
+    t.insertData(15);
+    
+     //t.Print();
+    t.LevelOrder();
+
+    t.Search(12);
+    
+    
+    
+    
+     
      
 
      
