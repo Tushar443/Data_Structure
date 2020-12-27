@@ -37,6 +37,7 @@ class Node
             this->right=right;
         }
 };
+
 class  Tree
 {
 private:
@@ -46,6 +47,7 @@ public:
     {
         root = NULL;
     }
+    Node* getRoot(){return root;}
     void insertData(int data)
     {
        
@@ -103,13 +105,62 @@ public:
                 ShowInorder(temp->getRight());
             }
 
-        }
-           
+        }      
     }
+    void LevelOrder(){
+       
+        
+        Node* temp=root;
+        if(temp!=NULL){ 
+            
+        }
+
+    }
+    
 
 };
+template<class T>
+class Queue{
+    private :
+    T top ;
+    T size;
+    T* store;
+    public:
+    Queue(T size){
+        this->size=size;
+        top=-1;
+        store=new T[size];
+    }
+    Queue(){
+        size=20;
+        top=-1;
+        store=new T[size];
+    }
+    void Enqueue(T* data){
+            store[++top]=data;    
+    }
+    ~Queue(){delete[] store}
+    T Dequeue(){
+            T data = store[top--];
+            return data;
+    }
+    T isEmpty(){
+        if(top == -1){
+            return true;
+        }
+        return false;
+    }
+    T isFull(){
+        if(top == (size -1) ){
+            return true;
+        }
+        return false;
+    }
+};
+
 int main()
 {
+   
     Tree t ;
     t.insertData(34);
     t.insertData(23);
@@ -117,6 +168,10 @@ int main()
     t.insertData(6);
     t.insertData(80);
     t.Print();
-    
+     Queue<string> qq1();
+     
+
+     
+     
     return 0;
 }
