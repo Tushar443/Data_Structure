@@ -105,8 +105,8 @@ class Tree
                         Inprint(temp->getRight());
                     }
                 }
-                else return 0;
                 
+                return 0;
             }
             int InprintP(Node* temp)
             {
@@ -123,7 +123,7 @@ class Tree
                         InprintP(temp->getRight());
                     }
                 }
-                else return 0;
+                 return 0;
                 
             }
             void PrintM()
@@ -142,17 +142,23 @@ int main()
 {
     Tree t;
     int N;
-    while(1)
-    {
+    t.Insert(10);
+    t.Insert(23);
+    t.Insert(3);
+    t.Insert(56);
+    t.Insert(5);
+    t.Insert(34);
+    // while(1)
+    // {
         
-        cin>>N;
-        if(N!=(-1))
-        {
+    //     cin>>N;
+    //     if(N!=(-1))
+    //     {
         
-            t.Insert(N);
-        }
-        else break;
-    }
+    //         t.Insert(N);
+    //     }
+    //     else break;
+    // }
      
     t.Traversal();
      t.PrintM();

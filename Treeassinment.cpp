@@ -132,7 +132,7 @@ class Tree
                 }
                 else
                 {
-                    cout<<data<<"=>";
+                    cout<<data<<"Root =>";
                     while(!s.isEmpty())
                     {
                         cout<<char(s.Deque())<<" ";

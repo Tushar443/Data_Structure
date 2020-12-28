@@ -1,3 +1,4 @@
+//compare Depth and Node of the tree
 #include<iostream>
 #include<stdlib.h>
 using namespace std;

@@ -1,3 +1,5 @@
+//COmpare two tree PreOrder and Inorder
+
 #include<iostream>
 using namespace std;
 class Node
