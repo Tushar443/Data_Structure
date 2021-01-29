@@ -158,8 +158,6 @@ public:
                 int data = q.Dequeue();
                 cout<<data<<endl;
               if(temp->getLeft()!=NULL){
-                q.Enqueue(temp->getLeft()->getData());
-                temp=temp->getLeft();
               }
                 if(temp->getRight()!=NULL){
                 q.Enqueue(temp->getRight()->getData());
