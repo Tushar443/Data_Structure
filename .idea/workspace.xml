@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="24212c30-2e81-436b-8e21-7e431a8c219b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/DS/AVL assign.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/AvlTree.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/BFS - Copy.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/BFS&amp;DFS.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/BFTDFT.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/BST.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Braket matchin complete.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Bubble.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Dijkstra Algo.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Double Link list.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Exam Question Level Wise  printing.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Floyd Warshall.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Graph.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/GraphLinkList.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Hashing.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Hashing2.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Hello.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Insertion.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/LINK lIST.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/QuickSoret Assinment.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/QuickSoret.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Service Counter.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Tree pathAssinment.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Tree.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/TreeDepthCampare.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/TreeFindPath.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/TreePrePostCompare.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Tree_Path.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Treeassinment.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/Zero.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/braket.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/familytree.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/graphics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/graphwaited.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/hackerrank.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/heap.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/inorder_preorder match.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/manipulation.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/selectionsort.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DS/tree_path.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AVL assign.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvlTree.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BFS - Copy.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BFS&amp;DFS.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BFTDFT.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BST.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Braket matchin complete.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bubble.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dijkstra Algo.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Double Link list.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exam Question Level Wise  printing.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Floyd Warshall.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graph.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphLinkList.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hashing.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hashing2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hello.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Insertion.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LINK lIST.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuickSoret Assinment.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuickSoret.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service Counter.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree pathAssinment.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreeDepthCampare.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreeFindPath.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreePrePostCompare.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree_Path.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Treeassinment.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zero.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/braket.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/familytree.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphics.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphwaited.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hackerrank.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/heap.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inorder_preorder match.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manipulation.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectionsort.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_path.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2ePSZEWJZt4MHFwkraI6VvnAQNc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "M:/Tushar/Java Practice/Data_Structure"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-8336523bb0d9-93b19daf" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="24212c30-2e81-436b-8e21-7e431a8c219b" name="Changes" comment="" />
+      <created>1711804773905</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711804773905</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
