@@ -1,5 +1,6 @@
 import ArraysInterviewQuestions.MissingNumbers;
 import ArraysInterviewQuestions.PairOfSum;
+import ArraysInterviewQuestions.RotateMatrix;
 import RecursionInterviewQuestions.*;
 
 import java.util.Arrays;
@@ -24,6 +25,10 @@ public class Main {
         int [] arr2 = {2,4,5,7,10};
         int[] result = PairOfSum.pairOfSum(arr2,12);
         System.out.println(Arrays.toString(result));
+        /**
+         * Rotate Matrix
+         */
+        RotateMatrix.rotateMatrix();
     }
 
     public static void recursiveQuestions(){
