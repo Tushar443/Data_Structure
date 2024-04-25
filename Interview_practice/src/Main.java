@@ -2,13 +2,22 @@ import ArraysInterviewQuestions.MissingNumbers;
 import ArraysInterviewQuestions.PairOfSum;
 import ArraysInterviewQuestions.RotateMatrix;
 import RecursionInterviewQuestions.*;
+import StringPractice.ReverseString;
 
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
         //recursiveQuestions();
-        arrayQuestions();
+        //arrayQuestions();
+        practice();
+    }
+
+    private static void practice() {
+        String s = ReverseString.reverseString("Tushar");
+        System.out.println(s);
+
+
     }
 
     private static void arrayQuestions() {

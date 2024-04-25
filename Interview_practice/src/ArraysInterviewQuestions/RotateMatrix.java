@@ -15,6 +15,7 @@ public class RotateMatrix {
 
         System.out.println("# After #");
         traverse(arr);
+        return true;
     }
 
     public static void traverse(int[][] arr){
