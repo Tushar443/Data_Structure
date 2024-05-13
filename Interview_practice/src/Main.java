@@ -2,16 +2,84 @@ import ArraysInterviewQuestions.*;
 import RecursionInterviewQuestions.*;
 import StringPractice.ReverseString;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         //recursiveQuestions();
-        arrayQuestions();
+        //arrayQuestions();
         //stringQuestion();
         //collectionQuestions();
+        practiceProgram();
+    }
+
+    private static void practiceProgram() throws Exception {
+//      getOutputProgram();
+        exceptionExample();
+
+    }
+
+    private static void exceptionExample() throws Exception {
+        class A{
+            public void methodA() throws IOException {
+//                Class temp = Class.forName(
+//                        "gfg");
+                System.out.println("Method A");
+            }
+        }
+        class B extends A{
+            @Override
+            public void methodA() throws FileNotFoundException {
+                FileReader file = new FileReader("file.txt");
+//
+//                // Trying to read a file that doesn't exist
+//                System.out.println(file.read());
+                System.out.println("Method B");
+            }
+        }
+        A a = new B();
+        a.methodA();
+    }
+
+    public static void getOutputProgram(){
+        class X {
+            static int i = 1111;   //After L1 =>2 ,  L3=>0,L2=> 2 ,L4=>6
+
+            static{
+                System.out.println("Static X");
+                i = i-- - --i;    //L1  1111 - 1109 = 2
+            }
+
+            {
+                System.out.println("Non-Static X");
+                i = i++ + ++i;    //L2  0 + 2 = 2
+            }
+        }
+
+        class Y extends X{
+            static{
+                System.out.println("Static Y");
+                i = --i - i--;    //L3  1 - 1 = 0
+            }
+            {
+                System.out.println("Non-Static Y");
+                i = ++i + i++;    //L4 3 + 3 = 6
+            }
+        }
+
+        class DriverClass{
+            public static void demo(){
+                Y y = new Y();
+                System.out.println(y.i);    //L5
+            }
+        }
+
+        DriverClass.demo();
     }
 
     private static void collectionQuestions() {
