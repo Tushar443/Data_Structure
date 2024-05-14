@@ -5,6 +5,7 @@ import StringPractice.ReverseString;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,9 +14,35 @@ public class Main {
     public static void main(String[] args) throws Exception {
         //recursiveQuestions();
         //arrayQuestions();
-        //stringQuestion();
+        stringQuestion();
         //collectionQuestions();
-        practiceProgram();
+//        practiceProgram();
+//        StringWithNewKeyWord();
+    }
+
+    private static void StringWithNewKeyWord() throws NoSuchFieldException, IllegalAccessException {
+        // String one = "abc";
+        // String two = new String("abc");
+        // String one = "abc";
+        // String two = "abc";
+        // String one = "abc";
+        // String two = "?abc".substring(1);
+        // two = two.intern();
+        String one = "abc";
+        String two = "abc".substring(1);
+        System.out.println("One CharArray = "+showInternalCharArrayHashCode(one));
+        System.out.println("Two CharArray = "+showInternalCharArrayHashCode(two));
+        System.out.println("One Hashcode = "+System.identityHashCode(one));
+        System.out.println("Two Hashcode = "+System.identityHashCode(two));
+        System.out.println(one==two);
+        System.out.println(one.equals(two));
+        System.out.println(two);
+    }
+
+    private static int showInternalCharArrayHashCode(String s) throws NoSuchFieldException, IllegalAccessException {
+        final Field value = String.class.getDeclaredField("value");
+        value.setAccessible(true);
+        return value.get(s).hashCode();
     }
 
     private static void practiceProgram() throws Exception {
@@ -47,39 +74,39 @@ public class Main {
     }
 
     public static void getOutputProgram(){
-        class X {
-            static int i = 1111;   //After L1 =>2 ,  L3=>0,L2=> 2 ,L4=>6
-
-            static{
-                System.out.println("Static X");
-                i = i-- - --i;    //L1  1111 - 1109 = 2
-            }
-
-            {
-                System.out.println("Non-Static X");
-                i = i++ + ++i;    //L2  0 + 2 = 2
-            }
-        }
-
-        class Y extends X{
-            static{
-                System.out.println("Static Y");
-                i = --i - i--;    //L3  1 - 1 = 0
-            }
-            {
-                System.out.println("Non-Static Y");
-                i = ++i + i++;    //L4 3 + 3 = 6
-            }
-        }
-
-        class DriverClass{
-            public static void demo(){
-                Y y = new Y();
-                System.out.println(y.i);    //L5
-            }
-        }
-
-        DriverClass.demo();
+//        class X {
+//            static int i = 1111;   //After L1 =>2 ,  L3=>0,L2=> 2 ,L4=>6
+//
+//            static{
+//                System.out.println("Static X");
+//                i = i-- - --i;    //L1  1111 - 1109 = 2
+//            }
+//
+//            {
+//                System.out.println("Non-Static X");
+//                i = i++ + ++i;    //L2  0 + 2 = 2
+//            }
+//        }
+//
+//        class Y extends X{
+//            static{
+//                System.out.println("Static Y");
+//                i = --i - i--;    //L3  1 - 1 = 0
+//            }
+//            {
+//                System.out.println("Non-Static Y");
+//                i = ++i + i++;    //L4 3 + 3 = 6
+//            }
+//        }
+//
+//        class DriverClass{
+//            public static void demo(){
+//                Y y = new Y();
+//                System.out.println(y.i);    //L5
+//            }
+//        }
+//
+//        DriverClass.demo();
     }
 
     private static void collectionQuestions() {
