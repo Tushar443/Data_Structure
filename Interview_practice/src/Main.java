@@ -1,14 +1,14 @@
 import ArraysInterviewQuestions.*;
 import RecursionInterviewQuestions.*;
+import StringPractice.RemoveStringDuplicate;
 import StringPractice.ReverseString;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -118,8 +118,21 @@ public class Main {
         String s = ReverseString.reverseString("Tushar");
         System.out.println(s);
 
+        s = "tusadcsjlcnsekjdehusedsldheuiasscs,csejseoifsehfselfsehisehfeifsefucidewdssdshdsdassdddcsdsr";
+        String s1 = RemoveStringDuplicate.removeDuplicate(s);
+        System.out.println(s1);
 
+        Map<Character,Integer> map = RemoveStringDuplicate.countOfChar(s);
+//        System.out.println(map);
+//        for (Map.Entry<Character,Integer> entry : map.entrySet()){
+//            System.out.println(entry.getKey() + " "+ entry.getValue());
+//        }
+        Set<Character> set = map.keySet();
+        for(Character c : set){
+            System.out.println("key = "+c+" and value = "+map.get(c) );
+        }
     }
+
 
     private static void arrayQuestions() {
         System.out.println("@@@@  Array Questions  @@@@");
