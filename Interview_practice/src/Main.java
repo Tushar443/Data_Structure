@@ -1,7 +1,8 @@
 import ArraysInterviewQuestions.*;
 import LinkedListsInterviewQuestions.SumList;
 import RecursionInterviewQuestions.*;
-import StactAndQuesuesInterviewQuestions.ThreeInOneStack;
+import StactAndQuesuesInterviewQuestions.DemoStack;
+import StactAndQuesuesInterviewQuestions.SetOfStack;
 import StringPractice.RemoveStringDuplicate;
 import StringPractice.ReverseString;
 
@@ -24,19 +25,9 @@ public class Main {
     }
 
     private static void StactAndQueue() {
-        ThreeInOneStack threeInOneStack = new ThreeInOneStack(3);
-        Arrays.stream(threeInOneStack.sizes).forEach(System.out::println);
-        threeInOneStack.push(0,8);
-        threeInOneStack.push(0,10);
-        threeInOneStack.push(1,51);
-        threeInOneStack.push(1,526);
-        threeInOneStack.push(2,856);
+//        ThreeInOneStack.main();
+        SetOfStack.main();
 
-        System.out.println("0st stack = " + threeInOneStack.isEmpty(0));
-//        Arrays.stream(threeInOneStack.values).forEach(System.out::println);
-//        Arrays.stream(threeInOneStack.sizes).forEach(System.out::println);
-        System.out.println("0st peek = " +threeInOneStack.peek(0));
-        System.out.println("1st top element = " +threeInOneStack.topOfStack(1));
     }
 
     private static void LinkedListQuestions() {

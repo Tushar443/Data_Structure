@@ -1,6 +1,7 @@
 package StactAndQuesuesInterviewQuestions;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ThreeInOneStack implements ThreeStack{
@@ -74,5 +75,21 @@ public class ThreeInOneStack implements ThreeStack{
         }else{
             return values[topOfStack(stackNum)];
         }
+    }
+
+    public static void main(){
+        ThreeInOneStack threeInOneStack = new ThreeInOneStack(3);
+        Arrays.stream(threeInOneStack.sizes).forEach(System.out::println);
+        threeInOneStack.push(0,8);
+        threeInOneStack.push(0,10);
+        threeInOneStack.push(1,51);
+        threeInOneStack.push(1,526);
+        threeInOneStack.push(2,856);
+
+        System.out.println("0st stack = " + threeInOneStack.isEmpty(0));
+//        Arrays.stream(threeInOneStack.values).forEach(System.out::println);
+//        Arrays.stream(threeInOneStack.sizes).forEach(System.out::println);
+        System.out.println("0st peek = " +threeInOneStack.peek(0));
+        System.out.println("1st top element = " +threeInOneStack.topOfStack(1));
     }
 }
