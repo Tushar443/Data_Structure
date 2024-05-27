@@ -1,7 +1,9 @@
 import ArraysInterviewQuestions.*;
 import LinkedListsInterviewQuestions.SumList;
 import RecursionInterviewQuestions.*;
+import StactAndQuesuesInterviewQuestions.AnimalShelter;
 import StactAndQuesuesInterviewQuestions.DemoStack;
+import StactAndQuesuesInterviewQuestions.QueueUsingStack;
 import StactAndQuesuesInterviewQuestions.SetOfStack;
 import StringPractice.RemoveStringDuplicate;
 import StringPractice.ReverseString;
@@ -26,8 +28,11 @@ public class Main {
 
     private static void StactAndQueue() {
 //        ThreeInOneStack.main();
-        SetOfStack.main();
+//        SetOfStack.main();
 
+//        QueueUsingStack.main();
+
+        AnimalShelter.main();
     }
 
     private static void LinkedListQuestions() {
