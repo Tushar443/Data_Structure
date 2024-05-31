@@ -1,7 +1,6 @@
-package StactAndQuesuesInterviewQuestions;
+package StactAndQuesuesInterviewQuestions.SetsOfStack;
 
 import java.util.ArrayList;
-import java.util.Stack;
 
 public class SetOfStack {
 

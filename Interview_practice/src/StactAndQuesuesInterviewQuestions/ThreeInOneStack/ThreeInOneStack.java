@@ -1,8 +1,6 @@
-package StactAndQuesuesInterviewQuestions;
+package StactAndQuesuesInterviewQuestions.ThreeInOneStack;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class ThreeInOneStack implements ThreeStack{
     int numberOfStack = 3;

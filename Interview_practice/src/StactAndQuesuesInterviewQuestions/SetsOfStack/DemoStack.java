@@ -1,4 +1,4 @@
-package StactAndQuesuesInterviewQuestions;
+package StactAndQuesuesInterviewQuestions.SetsOfStack;
 
 import java.util.EmptyStackException;
 

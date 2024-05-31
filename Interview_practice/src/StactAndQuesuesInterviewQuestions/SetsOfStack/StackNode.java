@@ -1,4 +1,4 @@
-package StactAndQuesuesInterviewQuestions;
+package StactAndQuesuesInterviewQuestions.SetsOfStack;
 
 public class StackNode {
     StackNode below;

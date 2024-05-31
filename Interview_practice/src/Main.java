@@ -1,12 +1,10 @@
 import ArraysInterviewQuestions.*;
 import LinkedListsInterviewQuestions.SumList;
 import RecursionInterviewQuestions.*;
-import StactAndQuesuesInterviewQuestions.AnimalShelter;
-import StactAndQuesuesInterviewQuestions.DemoStack;
-import StactAndQuesuesInterviewQuestions.QueueUsingStack;
-import StactAndQuesuesInterviewQuestions.SetOfStack;
+import StactAndQuesuesInterviewQuestions.ShelterAnimal.AnimalQueue;
 import StringPractice.RemoveStringDuplicate;
 import StringPractice.ReverseString;
+import TreesInterviewQuestions.BinarySearchTree.BinarySearchTree;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -23,7 +21,12 @@ public class Main {
 //        collectionQuestions();
 //        practiceProgram();
 //        StringWithNewKeyWord();
-        StactAndQueue();
+//        StactAndQueue();
+        TreesQuestions();
+    }
+
+    private static void TreesQuestions() {
+        BinarySearchTree.main();
     }
 
     private static void StactAndQueue() {
@@ -32,7 +35,7 @@ public class Main {
 
 //        QueueUsingStack.main();
 
-        AnimalShelter.main();
+//        AnimalQueue.main();
     }
 
     private static void LinkedListQuestions() {

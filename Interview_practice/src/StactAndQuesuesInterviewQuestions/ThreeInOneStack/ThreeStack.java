@@ -1,4 +1,4 @@
-package StactAndQuesuesInterviewQuestions;
+package StactAndQuesuesInterviewQuestions.ThreeInOneStack;
 
 public interface ThreeStack {
      boolean isFull(int stackNum);

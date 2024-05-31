@@ -1,4 +1,4 @@
-package StactAndQuesuesInterviewQuestions;
+package StactAndQuesuesInterviewQuestions.SetsOfStack;
 
 public interface IStackNode {
      boolean isFull();
