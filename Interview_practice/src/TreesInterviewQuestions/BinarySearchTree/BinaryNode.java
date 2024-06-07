@@ -8,4 +8,10 @@ public class BinaryNode {
     public BinaryNode(int value) {
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        String s ="value = "+value+ " height = "+height + " $$##";
+        return s;
+    }
 }

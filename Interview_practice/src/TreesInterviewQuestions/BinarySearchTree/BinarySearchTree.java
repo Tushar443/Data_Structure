@@ -70,11 +70,9 @@ public class BinarySearchTree {
         if(root.value>=value) {
             System.out.print("left->");
            root = search(root.left,value);
-
         }else{
             System.out.print("right->");
            root = search(root.right,value);
-
         }
         return root;
     }
