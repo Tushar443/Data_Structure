@@ -7,6 +7,7 @@ public class BinaryNode {
     int height;
     public BinaryNode(int value) {
         this.value = value;
+        this.height=0;
     }
 
     @Override

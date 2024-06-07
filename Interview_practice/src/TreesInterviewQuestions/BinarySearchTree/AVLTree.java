@@ -21,6 +21,13 @@ public class AVLTree {
         al.insert(75);
 //        al.inOrder(al.root);
 //        System.out.println(al.depth);
+        System.out.println(al.findCondition(al.root.right));
+    }
+
+    public void insert(int val) {
+        root = insertNode(root, val, 1);
+        BinaryNode left = findLeafNode(root.left);
+        BinaryNode right = findLeafNode(root.right);
     }
 
     private BinaryNode insertNode(BinaryNode root, int value, int height) {
@@ -54,20 +61,36 @@ public class AVLTree {
         BinaryNode newRoot = disBalanced.left;
         disBalanced.left = disBalanced.left.right;
         newRoot.right = disBalanced;
+        disBalanced.height= 1+ Math.max(getHeight(disBalanced.left) , getHeight(disBalanced.right));
+        newRoot.height= 1+ Math.max(getHeight(newRoot.left) , getHeight(newRoot.right));
         return newRoot;
     }
 
-    public void insert(int val) {
-        root = insertNode(root, val, 1);
-        BinaryNode left = findLeafNode(root.left);
-        BinaryNode right = findLeafNode(root.right);
-        if(left != null && right == null){
+    public BinaryNode leftRotation(BinaryNode disBalanced){
+        BinaryNode newRoot = disBalanced.right;
+        disBalanced.right = disBalanced.right.left;
+        newRoot.left = disBalanced;
+        disBalanced.height= 1+ Math.max(getHeight(disBalanced.left) , getHeight(disBalanced.right));
+        newRoot.height= 1+ Math.max(getHeight(newRoot.left) , getHeight(newRoot.right));
+        return newRoot;
+    }
 
-        }else if(left == null && right!= null){
-
+    public StringBuilder findCondition(BinaryNode node){
+        //LL,LR,RR,RL
+        StringBuilder sb = new StringBuilder();
+        if(node == null){
+            return null;
         }
-        int diff = left.height - right.height;
-        System.out.println("left => "+ left + " right => "+right);
+        if(node.left != null){
+            sb.append("L");
+            sb.append(findCondition(node.left));
+        }else if (node.right != null){
+            sb.append("R");
+            sb.append(findCondition(node.right));
+        }else{
+            return sb;
+        }
+        return sb;
     }
 
     public void inOrder(BinaryNode root) {
@@ -87,6 +110,13 @@ public class AVLTree {
             root = search(root.right, value);
         }
         return root;
+    }
+
+    public int getHeight(BinaryNode node){
+        if(node == null){
+            return 0;
+        }
+        return node.height;
     }
 
 }
