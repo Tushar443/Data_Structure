@@ -27,6 +27,9 @@ public class AVLTree {
         al.insert(15);
         al.insert(20);
         al.inOrder(al.root);
+        System.out.println();
+        al.delete(5);
+        al.inOrder(al.root);
 //        System.out.println(al.depth);
 //        System.out.println(al.findCondition(al.root.right));
     }
@@ -78,6 +81,10 @@ public class AVLTree {
         return minimumNode(node.left);
     }
 
+    public void delete(int value){
+        root = deleteNode(this.root,value);
+    }
+
     public BinaryNode deleteNode(BinaryNode node, int value) {
         if (node == null) {
             return null;
@@ -91,10 +98,12 @@ public class AVLTree {
                 BinaryNode minimumNode = minimumNode(node.right);
                 node.value = minimumNode.value;
                 node.right = deleteNode(node.right,minimumNode.value);
-            } else if (node.left != null) {
+            } else if (node.left == null) {
                 node = node.left;
-            } else if (node.right != null) {
+            } else if (node.right == null) {
                 node = node.right;
+            }else{
+                node = null;
             }
         }
 
@@ -110,29 +119,16 @@ public class AVLTree {
             return rotateRight(node);
 
         }
-        if(balance > -1 && getBalance(node.right) <= 0){
+        if(balance < -1 && getBalance(node.right) <= 0){
             //RR
             return rotateLeft(node);
         }
-        if(balance > -1 && getBalance(node.right) > 0){
+        if(balance < -1 && getBalance(node.right) > 0){
             //RL
             node.right = rotateRight(node.right);
             return rotateLeft(node);
         }
         return node;
-    }
-
-    public BinaryNode findLeafNode(BinaryNode currentNode) {
-        if (currentNode != null) {
-            if (currentNode.left == null && currentNode.right == null) {
-                return currentNode;
-            } else if (currentNode.left != null) {
-                return findLeafNode(currentNode.left);
-            } else if (currentNode.right != null) {
-                return findLeafNode(currentNode.right);
-            }
-        }
-        return null;
     }
 
     public BinaryNode rotateRight(BinaryNode disBalanced) {
@@ -151,24 +147,6 @@ public class AVLTree {
         disBalanced.height = 1 + Math.max(getHeight(disBalanced.left), getHeight(disBalanced.right));
         newRoot.height = 1 + Math.max(getHeight(newRoot.left), getHeight(newRoot.right));
         return newRoot;
-    }
-
-    public StringBuilder findCondition(BinaryNode node) {
-        //LL,LR,RR,RL
-        StringBuilder sb = new StringBuilder();
-        if (node == null) {
-            return null;
-        }
-        if (node.left != null) {
-            sb.append("L");
-            sb.append(findCondition(node.left));
-        } else if (node.right != null) {
-            sb.append("R");
-            sb.append(findCondition(node.right));
-        } else {
-            return sb;
-        }
-        return sb;
     }
 
     public void inOrder(BinaryNode root) {
@@ -204,4 +182,34 @@ public class AVLTree {
         return getHeight(node.left) - getHeight(node.right);
     }
 
+    public BinaryNode findLeafNode(BinaryNode currentNode) {
+        if (currentNode != null) {
+            if (currentNode.left == null && currentNode.right == null) {
+                return currentNode;
+            } else if (currentNode.left != null) {
+                return findLeafNode(currentNode.left);
+            } else if (currentNode.right != null) {
+                return findLeafNode(currentNode.right);
+            }
+        }
+        return null;
+    }
+
+    public StringBuilder findCondition(BinaryNode node) {
+        //LL,LR,RR,RL
+        StringBuilder sb = new StringBuilder();
+        if (node == null) {
+            return null;
+        }
+        if (node.left != null) {
+            sb.append("L");
+            sb.append(findCondition(node.left));
+        } else if (node.right != null) {
+            sb.append("R");
+            sb.append(findCondition(node.right));
+        } else {
+            return sb;
+        }
+        return sb;
+    }
 }
