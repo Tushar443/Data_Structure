@@ -5,6 +5,7 @@ import StactAndQuesuesInterviewQuestions.ShelterAnimal.AnimalQueue;
 import StringPractice.RemoveStringDuplicate;
 import StringPractice.ReverseString;
 import TreesInterviewQuestions.BinarySearchTree.AVLTree;
+import TreesInterviewQuestions.BinarySearchTree.BinaryHeap;
 import TreesInterviewQuestions.BinarySearchTree.BinarySearchTree;
 
 import java.io.FileNotFoundException;
@@ -28,7 +29,8 @@ public class Main {
 
     private static void TreesQuestions() {
 //        BinarySearchTree.main();
-        AVLTree.main();
+//        AVLTree.main();
+        BinaryHeap.main();
     }
 
     private static void StactAndQueue() {
