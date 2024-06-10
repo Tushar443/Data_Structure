@@ -7,6 +7,7 @@ import StringPractice.ReverseString;
 import TreesInterviewQuestions.BinarySearchTree.AVLTree;
 import TreesInterviewQuestions.BinarySearchTree.BinaryHeap;
 import TreesInterviewQuestions.BinarySearchTree.BinarySearchTree;
+import TreesInterviewQuestions.BinarySearchTree.Trie;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -30,7 +31,8 @@ public class Main {
     private static void TreesQuestions() {
 //        BinarySearchTree.main();
 //        AVLTree.main();
-        BinaryHeap.main();
+//        BinaryHeap.main();
+        Trie.main();
     }
 
     private static void StactAndQueue() {
