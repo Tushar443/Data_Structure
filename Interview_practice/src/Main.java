@@ -1,13 +1,9 @@
 import ArraysInterviewQuestions.*;
 import LinkedListsInterviewQuestions.SumList;
 import RecursionInterviewQuestions.*;
-import StactAndQuesuesInterviewQuestions.ShelterAnimal.AnimalQueue;
+import SortingAlgorithms.SortingAlgorithms;
 import StringPractice.RemoveStringDuplicate;
 import StringPractice.ReverseString;
-import TreesInterviewQuestions.BinarySearchTree.AVLTree;
-import TreesInterviewQuestions.BinarySearchTree.BinaryHeap;
-import TreesInterviewQuestions.BinarySearchTree.BinarySearchTree;
-import TreesInterviewQuestions.BinarySearchTree.Trie;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -32,7 +28,8 @@ public class Main {
 //        BinarySearchTree.main();
 //        AVLTree.main();
 //        BinaryHeap.main();
-        Trie.main();
+//        Trie.main();
+        SortingAlgorithms.main();
     }
 
     private static void StactAndQueue() {
