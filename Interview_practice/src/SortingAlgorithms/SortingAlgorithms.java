@@ -2,12 +2,48 @@ package SortingAlgorithms;
 
 public class SortingAlgorithms {
     public static void main() {
-        int[] arr = {23, 45, 32, 2, 5, 67, 46, 13};
+        int[] arr = {8,4,2,9,1,3,5,7,10};
 //        bubbleSort(arr);
 //        selectionSort(arr);
-        insertionSort(arr);
+//        insertionSort(arr);
+        mergeSort(arr,0,arr.length-1);
         printArray(arr);
 
+    }
+
+    public static void mergeSort(int[] arr , int left,int right){
+        if(left<right){
+            int mid = (left+right)/2;
+            mergeSort(arr,left,mid);
+            mergeSort(arr,mid+1,right);
+            merge(arr,left,mid,right);
+        }
+    }
+
+    public static void merge(int[] arr , int left ,int middle,int right){
+        int[] leftArr = new int[middle-left+2];
+        int[] rightArr = new int[right-middle+1];
+
+        for(int i = 0; i <= middle - left; i++){
+            leftArr[i]=arr[left+i];
+        }
+        for(int i = 0; i < right - middle; i++){
+            rightArr[i]=arr[middle+1+i];
+        }
+
+        leftArr[middle-left+1]= Integer.MAX_VALUE;
+        rightArr[right-middle]= Integer.MAX_VALUE;
+
+        int i=0,j=0;
+        for(int k = left ;k<=right ; k++){
+            if(leftArr[i] < rightArr[j]){
+                arr[k] = leftArr[i];
+                i++;
+            }else{
+                arr[k] = rightArr[j];
+                j++;
+            }
+        }
     }
 
     private static void insertionSort(int[] arr) {
