@@ -59,42 +59,89 @@ public class BinaryHeap {
     }
 
     public void heapifyTopTOBottom(int index,String heapType){
-        if(index<=1){
+        int left = index*2;
+        int right = index*2+1;
+        int swapChild;
+        if(sizeOfArray < left){
             return;
         }
-        int child1 = index * 2;
-        int child2 = index * 2 + 1;
-        if (heapType.equalsIgnoreCase("min")) {
-            if(arr[child1] < arr[child2]){
-                if (arr[child1] < arr[index]){
-                    int temp = arr[child1];
-                    arr[child1] = arr[index];
-                    arr[index] = temp;
+        if(heapType.equalsIgnoreCase("max")){
+            if(sizeOfArray == left){
+                if(arr[index]<arr[left]){
+                    int temp =arr[index];
+                    arr[index] = arr[left];
+                    arr[left] = temp;
                 }
+                return;
             }else{
-                if (arr[child2] < arr[index]){
-                    int temp = arr[child2];
-                    arr[child2] = arr[index];
-                    arr[index] = temp;
+                if(arr[left] > arr[right]){
+                    swapChild = left;
+                }else {
+                    swapChild = right;
+                }
+                if(arr[index] < arr[swapChild]){
+                    int temp =arr[index];
+                    arr[index] = arr[swapChild];
+                    arr[swapChild] = temp;
                 }
             }
-        } else if (heapType.equalsIgnoreCase("max")) {
-            if(arr[child1] > arr[child2]){
-                if (arr[child1] > arr[index]){
-                    int temp = arr[child1];
-                    arr[child1] = arr[index];
-                    arr[index] = temp;
+        }else if (heapType.equalsIgnoreCase("min")){
+            if(sizeOfArray == left){
+                if(arr[index] > arr[left]){
+                    int temp =arr[index];
+                    arr[index] = arr[left];
+                    arr[left] = temp;
                 }
+                return;
             }else{
-                if (arr[child2] > arr[index]){
-                    int temp = arr[child2];
-                    arr[child2] = arr[index];
-                    arr[index] = temp;
+                if(arr[left] < arr[right]){
+                    swapChild = left;
+                }else {
+                    swapChild = right;
+                }
+                if(arr[index] > arr[swapChild]){
+                    int temp =arr[index];
+                    arr[index] = arr[swapChild];
+                    arr[swapChild] = temp;
                 }
             }
         }
-        heapifyTopTOBottom(child1,heapType);
-        heapifyTopTOBottom(child2,heapType);
+
+
+//        int child1 = index * 2;
+//        int child2 = index * 2 + 1;
+//        if (heapType.equalsIgnoreCase("min")) {
+//            if(arr[child1] < arr[child2]){
+//                if (arr[child1] < arr[index]){
+//                    int temp = arr[child1];
+//                    arr[child1] = arr[index];
+//                    arr[index] = temp;
+//                }
+//            }else{
+//                if (arr[child2] < arr[index]){
+//                    int temp = arr[child2];
+//                    arr[child2] = arr[index];
+//                    arr[index] = temp;
+//                }
+//            }
+//        } else if (heapType.equalsIgnoreCase("max")) {
+//            if(arr[child1] > arr[child2]){
+//                if (arr[child1] > arr[index]){
+//                    int temp = arr[child1];
+//                    arr[child1] = arr[index];
+//                    arr[index] = temp;
+//                }
+//            }else{
+//                if (arr[child2] > arr[index]){
+//                    int temp = arr[child2];
+//                    arr[child2] = arr[index];
+//                    arr[index] = temp;
+//                }
+//            }
+//        }
+//        heapifyTopTOBottom(child1,heapType);
+//        heapifyTopTOBottom(child2,heapType);
+//
     }
 
     public void insertIntoBH(int value,String heapType) {
