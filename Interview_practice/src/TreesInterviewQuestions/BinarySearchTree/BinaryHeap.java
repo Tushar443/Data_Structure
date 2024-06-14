@@ -61,7 +61,7 @@ public class BinaryHeap {
     public void heapifyTopTOBottom(int index,String heapType){
         int left = index*2;
         int right = index*2+1;
-        int swapChild;
+        int swapChild = 0;
         if(sizeOfArray < left){
             return;
         }
@@ -107,7 +107,7 @@ public class BinaryHeap {
             }
         }
 
-
+        heapifyTopTOBottom(swapChild,heapType);
 //        int child1 = index * 2;
 //        int child2 = index * 2 + 1;
 //        if (heapType.equalsIgnoreCase("min")) {

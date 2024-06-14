@@ -22,11 +22,9 @@ public class SortingAlgorithms {
         for(int i = 0; i<arr.length;i++){
             br.insertIntoBH(arr[i],"min");
         }
-        br.levelOrder();
         for(int i = 0; i<arr.length;i++){
             arr[i] = br.extractHeadFromBH("min");
         }
-
     }
 
     public static void QuickSort(int[] arr , int start, int end){
