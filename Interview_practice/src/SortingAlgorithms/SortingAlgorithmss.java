@@ -1,10 +1,8 @@
 package SortingAlgorithms;
 
-import StactAndQuesuesInterviewQuestions.SetsOfStack.IStackNode;
 import TreesInterviewQuestions.BinarySearchTree.BinaryHeap;
-import javafx.scene.control.SpinnerValueFactory;
 
-public class SortingAlgorithms {
+public class SortingAlgorithmss {
     public static void main() {
         int[] arr = {8,4,2,9,1,3,5,7,10};
 //        bubbleSort(arr);

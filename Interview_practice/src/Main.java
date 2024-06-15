@@ -1,7 +1,11 @@
 import ArraysInterviewQuestions.*;
+import GreedyAlgorithms.ActivitySelectionProblem;
+import GreedyAlgorithms.CoinChangeProblem;
+import GreedyAlgorithms.FractionalKnapSackProblem;
 import LinkedListsInterviewQuestions.SumList;
 import RecursionInterviewQuestions.*;
-import SortingAlgorithms.SortingAlgorithms;
+import SortingAlgorithms.BinarySearch;
+import SortingAlgorithms.SortingAlgorithmss;
 import StringPractice.RemoveStringDuplicate;
 import StringPractice.ReverseString;
 
@@ -21,7 +25,16 @@ public class Main {
 //        practiceProgram();
 //        StringWithNewKeyWord();
 //        StactAndQueue();
-        TreesQuestions();
+//        TreesQuestions();
+        GreedyAlgorithms();
+    }
+
+    private static void GreedyAlgorithms() {
+        //Insertion Sort
+        //Selection Sort
+//        ActivitySelectionProblem.main();
+//        CoinChangeProblem.main();
+        FractionalKnapSackProblem.main();
     }
 
     private static void TreesQuestions() {
@@ -29,8 +42,10 @@ public class Main {
 //        AVLTree.main();
 //        BinaryHeap.main();
 //        Trie.main();
-        SortingAlgorithms.main();
+//        SortingAlgorithms.main();
+//        BinarySearch.main();
     }
+
 
     private static void StactAndQueue() {
 //        ThreeInOneStack.main();
