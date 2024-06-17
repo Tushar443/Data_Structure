@@ -1,4 +1,7 @@
 import ArraysInterviewQuestions.*;
+import DivideAndConquerAlgorithm.ConvertString;
+import DivideAndConquerAlgorithm.HouseRobber;
+import DivideAndConquerAlgorithm.NumberFactor;
 import GreedyAlgorithms.ActivitySelectionProblem;
 import GreedyAlgorithms.CoinChangeProblem;
 import GreedyAlgorithms.FractionalKnapSackProblem;
@@ -26,7 +29,14 @@ public class Main {
 //        StringWithNewKeyWord();
 //        StactAndQueue();
 //        TreesQuestions();
-        GreedyAlgorithms();
+//        GreedyAlgorithms();
+        DivideAndConquerAlgo();
+    }
+
+    private static void DivideAndConquerAlgo() {
+//        NumberFactor.main();
+//        HouseRobber.main();
+        ConvertString.main();
     }
 
     private static void GreedyAlgorithms() {
