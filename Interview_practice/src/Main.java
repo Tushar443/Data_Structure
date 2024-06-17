@@ -1,8 +1,5 @@
 import ArraysInterviewQuestions.*;
-import DivideAndConquerAlgorithm.ConvertString;
-import DivideAndConquerAlgorithm.HouseRobber;
-import DivideAndConquerAlgorithm.LongestCommonSubsequence;
-import DivideAndConquerAlgorithm.NumberFactor;
+import DivideAndConquerAlgorithm.*;
 import GreedyAlgorithms.ActivitySelectionProblem;
 import GreedyAlgorithms.CoinChangeProblem;
 import GreedyAlgorithms.FractionalKnapSackProblem;
@@ -38,7 +35,8 @@ public class Main {
 //        NumberFactor.main();
 //        HouseRobber.main();
 //        ConvertString.main();
-        LongestCommonSubsequence.main();
+//        LongestCommonSubsequence.main();
+        MinimumCostToReachEnd.main();
     }
 
     private static void GreedyAlgorithms() {
