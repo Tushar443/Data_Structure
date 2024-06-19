@@ -1,5 +1,6 @@
 import ArraysInterviewQuestions.*;
 import DivideAndConquerAlgorithm.*;
+import DynamicProgramming.FibonaccoSeriesDynamic;
 import GreedyAlgorithms.ActivitySelectionProblem;
 import GreedyAlgorithms.CoinChangeProblem;
 import GreedyAlgorithms.FractionalKnapSackProblem;
@@ -28,7 +29,12 @@ public class Main {
 //        StactAndQueue();
 //        TreesQuestions();
 //        GreedyAlgorithms();
-        DivideAndConquerAlgo();
+//        DivideAndConquerAlgo();
+        DynamicProgramming();
+    }
+
+    private static void DynamicProgramming() {
+        FibonaccoSeriesDynamic.main();
     }
 
     private static void DivideAndConquerAlgo() {
