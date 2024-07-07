@@ -8,6 +8,7 @@ import LinkedListsInterviewQuestions.SumList;
 import RecursionInterviewQuestions.*;
 import SortingAlgorithms.BinarySearch;
 import SortingAlgorithms.SortingAlgorithmss;
+import StactAndQuesuesInterviewQuestions.ThreeElevatorsProblem.ThreeElevatorsProblem;
 import StringPractice.RemoveStringDuplicate;
 import StringPractice.ReverseString;
 
@@ -20,7 +21,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws Exception {
 //        recursiveQuestions();
-//        arrayQuestions();
+        arrayQuestions();
 //        LinkedListQuestions();
 //        stringQuestion();
 //        collectionQuestions();
@@ -30,7 +31,7 @@ public class Main {
 //        TreesQuestions();
 //        GreedyAlgorithms();
 //        DivideAndConquerAlgo();
-        DynamicProgramming();
+//        DynamicProgramming();
     }
 
     private static void DynamicProgramming() {
@@ -70,6 +71,8 @@ public class Main {
 //        QueueUsingStack.main();
 
 //        AnimalQueue.main();
+
+        ThreeElevatorsProblem.main();
     }
 
     private static void LinkedListQuestions() {
@@ -198,6 +201,7 @@ public class Main {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 10};
         int miss = MissingNumbers.missingNum(arr);
         System.out.println("Missing Element from arr :- " + miss);
+        MissingNumbers.missingMultipleValueFromArray(arr);
         System.out.println("@@@@##################@@@@");
         /**
          * Pair of Sum

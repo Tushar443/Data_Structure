@@ -15,4 +15,17 @@ public class MissingNumbers {
         int miss = actualSum - sum;
         return miss;
     }
+
+    public static void missingMultipleValueFromArray(int[] seq){
+        int add= 1;
+        for(int i =0;i<seq.length;i++){
+            if(seq[i] == add){
+                System.out.println(seq[i]);
+            }else{
+                System.out.println(add + "Not Present ");
+                i--;
+            }
+            add+=1;
+        }
+    }
 }
