@@ -8,9 +8,11 @@ import LinkedListsInterviewQuestions.SumList;
 import RecursionInterviewQuestions.*;
 import SortingAlgorithms.BinarySearch;
 import SortingAlgorithms.SortingAlgorithmss;
+import StactAndQuesuesInterviewQuestions.InfixToPostFix;
 import StactAndQuesuesInterviewQuestions.ThreeElevatorsProblem.ThreeElevatorsProblem;
 import StringPractice.RemoveStringDuplicate;
 import StringPractice.ReverseString;
+import TreesInterviewQuestions.BinarySearchTree.BinarySearchTree;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -20,8 +22,8 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-//        recursiveQuestions();
-        arrayQuestions();
+        recursiveQuestions();
+//        arrayQuestions();
 //        LinkedListQuestions();
 //        stringQuestion();
 //        collectionQuestions();
@@ -60,7 +62,7 @@ public class Main {
 //        BinaryHeap.main();
 //        Trie.main();
 //        SortingAlgorithms.main();
-//        BinarySearch.main();
+        BinarySearch.main();
     }
 
 
@@ -72,7 +74,9 @@ public class Main {
 
 //        AnimalQueue.main();
 
-        ThreeElevatorsProblem.main();
+//        ThreeElevatorsProblem.main();
+
+        InfixToPostFix.main();
     }
 
     private static void LinkedListQuestions() {
@@ -273,5 +277,11 @@ public class Main {
          */
         num = DecimalToBinary.decimalToBinary(13);
         System.out.println("Decimal to Binary " + num);
+
+        /**
+         * Tower of Hanoi
+         */
+
+        TowerOfHanoi.main();
     }
 }
