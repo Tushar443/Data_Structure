@@ -3,7 +3,7 @@ package StringPractice;
 public class ReverseStringPrefix {
 
     public static void main() {
-       String s= reversePrefix("Tushar",'a');
+       String s= reversePrefix("Tushar",'a'); // ans = ahsuTr
         System.out.println(s);
     }
 
