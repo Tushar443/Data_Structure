@@ -1,18 +1,13 @@
 import ArraysInterviewQuestions.*;
 import DivideAndConquerAlgorithm.*;
 import DynamicProgramming.FibonaccoSeriesDynamic;
-import GreedyAlgorithms.ActivitySelectionProblem;
-import GreedyAlgorithms.CoinChangeProblem;
 import GreedyAlgorithms.FractionalKnapSackProblem;
 import LinkedListsInterviewQuestions.SumList;
 import RecursionInterviewQuestions.*;
-import SortingAlgorithms.BinarySearch;
-import SortingAlgorithms.SortingAlgorithmss;
+import SortingAlgorithms.SortingAlgorithms;
 import StactAndQuesuesInterviewQuestions.InfixToPostFix;
-import StactAndQuesuesInterviewQuestions.ThreeElevatorsProblem.ThreeElevatorsProblem;
 import StringPractice.RemoveStringDuplicate;
 import StringPractice.ReverseString;
-import TreesInterviewQuestions.BinarySearchTree.BinarySearchTree;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -22,18 +17,23 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        recursiveQuestions();
+//        recursiveQuestions();
 //        arrayQuestions();
 //        LinkedListQuestions();
 //        stringQuestion();
 //        collectionQuestions();
 //        practiceProgram();
 //        StringWithNewKeyWord();
-//        StactAndQueue();
+//        StackAndQueue();
 //        TreesQuestions();
 //        GreedyAlgorithms();
 //        DivideAndConquerAlgo();
 //        DynamicProgramming();
+        SortingAlgoriths();
+    }
+
+    private static void SortingAlgoriths() {
+        SortingAlgorithms.main();
     }
 
     private static void DynamicProgramming() {
@@ -61,12 +61,11 @@ public class Main {
 //        AVLTree.main();
 //        BinaryHeap.main();
 //        Trie.main();
-//        SortingAlgorithms.main();
-        BinarySearch.main();
+//        BinarySearch.main();
     }
 
 
-    private static void StactAndQueue() {
+    private static void StackAndQueue() {
 //        ThreeInOneStack.main();
 //        SetOfStack.main();
 

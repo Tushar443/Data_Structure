@@ -2,19 +2,23 @@ package SortingAlgorithms;
 
 import TreesInterviewQuestions.BinarySearchTree.BinaryHeap;
 
-public class SortingAlgorithmss {
+public class SortingAlgorithms {
     public static void main() {
         int[] arr = {8,4,2,9,1,3,5,7,10};
 //        bubbleSort(arr);
 //        selectionSort(arr);
 //        insertionSort(arr);
 //        mergeSort(arr,0,arr.length-1);
-//        QuickSort(arr,0,arr.length-1);
-        HeapSort(arr);
+        QuickSort(arr,0,arr.length-1);
+//        HeapSort(arr);
         printArray(arr);
 
     }
 
+    /**
+     * Head Sort
+     * @param arr
+     */
     public static void HeapSort(int[] arr){
         BinaryHeap br = new BinaryHeap(arr.length);
         for(int i = 0; i<arr.length;i++){
@@ -25,6 +29,12 @@ public class SortingAlgorithmss {
         }
     }
 
+    /**
+     * Quick Sort
+     * @param arr
+     * @param start
+     * @param end
+     */
     public static void QuickSort(int[] arr , int start, int end){
         if(start < end){
             int pivot = partition(arr,start,end);
@@ -47,6 +57,12 @@ public class SortingAlgorithmss {
         return i;
     }
 
+    /**
+     * Merge Sort
+     * @param arr
+     * @param left
+     * @param right
+     */
     public static void mergeSort(int[] arr , int left,int right){
         if(left<right){
             int mid = (left+right)/2;
@@ -82,6 +98,10 @@ public class SortingAlgorithmss {
         }
     }
 
+    /**
+     * Insertion Sort
+     * @param arr
+     */
     private static void insertionSort(int[] arr) {
         for(int i = 1 ; i< arr.length;i++){
             int temp = arr[i] , j = i;
@@ -93,6 +113,10 @@ public class SortingAlgorithmss {
         }
     }
 
+    /**
+     * Selection Sort
+     * @param arr
+     */
     private static void selectionSort(int[] arr) {
         int min;
         for (int i = 0; i < arr.length; i++) {
@@ -109,6 +133,11 @@ public class SortingAlgorithmss {
             }
         }
     }
+
+    /**
+     * bubbleSort
+     * @param arr
+     */
     public static void bubbleSort(int[]arr){
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
@@ -120,7 +149,6 @@ public class SortingAlgorithmss {
             }
         }
     }
-
 
     public static void printArray(int[] arr){
         for(int i = 0;i<arr.length;i++){
