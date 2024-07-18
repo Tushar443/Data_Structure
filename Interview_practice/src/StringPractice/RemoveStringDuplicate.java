@@ -1,11 +1,25 @@
 package StringPractice;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Map;
+import java.util.*;
 
 public class RemoveStringDuplicate {
+
+    public static void main(){
+        String s = "tusadcsjlcnsekjdehusedsldheuiasscs,csejseoifsehfselfsehisehfeifsefucidewdssdshdsdassdddcsdsr";
+        String s1 = RemoveStringDuplicate.removeDuplicate(s);
+        System.out.println(s1);
+
+        Map<Character, Integer> map = RemoveStringDuplicate.countOfChar(s);
+        map.forEach((key,value)-> System.out.println(key+ " "+ value));
+//        System.out.println(map);
+//        for (Map.Entry<Character,Integer> entry : map.entrySet()){
+//            System.out.println(entry.getKey() + " "+ entry.getValue());
+//        }
+//        Set<Character> set = map.keySet();
+//        for (Character c : set) {
+//            System.out.println("key = " + c + " and value = " + map.get(c));
+//        }
+    }
 
     public static String removeDuplicate(String s){
         char[] arr= s.toCharArray();

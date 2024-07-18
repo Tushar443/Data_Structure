@@ -8,6 +8,7 @@ import SortingAlgorithms.SortingAlgorithms;
 import StactAndQuesuesInterviewQuestions.InfixToPostFix;
 import StringPractice.RemoveStringDuplicate;
 import StringPractice.ReverseString;
+import StringPractice.ReverseStringPrefix;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -20,7 +21,7 @@ public class Main {
 //        recursiveQuestions();
 //        arrayQuestions();
 //        LinkedListQuestions();
-//        stringQuestion();
+        stringQuestion();
 //        collectionQuestions();
 //        practiceProgram();
 //        StringWithNewKeyWord();
@@ -29,7 +30,7 @@ public class Main {
 //        GreedyAlgorithms();
 //        DivideAndConquerAlgo();
 //        DynamicProgramming();
-        SortingAlgoriths();
+//        SortingAlgoriths();
     }
 
     private static void SortingAlgoriths() {
@@ -177,22 +178,12 @@ public class Main {
     }
 
     private static void stringQuestion() {
-        String s = ReverseString.reverseString("Tushar");
-        System.out.println(s);
+        ReverseString.main();
 
-        s = "tusadcsjlcnsekjdehusedsldheuiasscs,csejseoifsehfselfsehisehfeifsefucidewdssdshdsdassdddcsdsr";
-        String s1 = RemoveStringDuplicate.removeDuplicate(s);
-        System.out.println(s1);
+        RemoveStringDuplicate.main();
 
-        Map<Character, Integer> map = RemoveStringDuplicate.countOfChar(s);
-//        System.out.println(map);
-//        for (Map.Entry<Character,Integer> entry : map.entrySet()){
-//            System.out.println(entry.getKey() + " "+ entry.getValue());
-//        }
-        Set<Character> set = map.keySet();
-        for (Character c : set) {
-            System.out.println("key = " + c + " and value = " + map.get(c));
-        }
+        ReverseStringPrefix.main();
+
     }
 
 
