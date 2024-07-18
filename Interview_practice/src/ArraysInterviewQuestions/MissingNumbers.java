@@ -1,7 +1,15 @@
 package ArraysInterviewQuestions;
 
 public class MissingNumbers {
+    public static void main(){
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 10};
+        int miss = MissingNumbers.missingNum(arr);
+        System.out.println("Missing Element from arr :- " + miss);
+        MissingNumbers.missingMultipleValueFromArray(arr);
+        System.out.println("@@@@##################@@@@");
 
+
+    }
     public static int missingNum(int[] arr){
         int len = arr.length-1;
         int lastNum = arr[len];

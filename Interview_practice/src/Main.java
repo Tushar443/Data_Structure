@@ -19,9 +19,9 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws Exception {
 //        recursiveQuestions();
-//        arrayQuestions();
+        arrayQuestions();
 //        LinkedListQuestions();
-        stringQuestion();
+//        stringQuestion();
 //        collectionQuestions();
 //        practiceProgram();
 //        StringWithNewKeyWord();
@@ -192,40 +192,31 @@ public class Main {
         /**
          * Missing Num
          */
-        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 10};
-        int miss = MissingNumbers.missingNum(arr);
-        System.out.println("Missing Element from arr :- " + miss);
-        MissingNumbers.missingMultipleValueFromArray(arr);
-        System.out.println("@@@@##################@@@@");
+        MissingNumbers.main();
+
         /**
          * Pair of Sum
          */
-        int[] arr2 = {2, 4, 5, 7, 10};
-        int[] result = PairOfSum.pairOfSum(arr2, 12);
-        System.out.println("Pair of Sum = " + Arrays.toString(result));
-        System.out.println("@@@@##################@@@@");
+        PairOfSum.main();
+
         /**
          * Rotate Matrix
          */
         RotateMatrix.rotateMatrix();
 
         /**
-         * Largest Positive Integer That Exists With Its Negative
-         * Input: nums = [-1,2,-3,3]
-         * Output: 3
-         * Explanation: 3 is the only valid k we can find in the array.
+         *  Largest Positive Integer That Exists With Its Negative
          */
-        System.out.println("@@@@##################@@@@");
-        int[] nums = new int[]{-49, 8, 19, -39, 37, 22, -39, 4, 37, 8, 20, -2, -4, -5, 14, -14, -27, 24, 30, 3, -12, 19, 22, 28, -3, -6, 6, 22, 37, 27, 16, 27, -6, -49, 31, 29};
-        int resultMax = LargestPositiveNumberWithNegativeNumber.findMaxK(nums);
-        System.out.println("largest number = " + resultMax);
+        LargestPositiveNumberWithNegativeNumber.main();
 
         /**
          * Only Odd Numbers in the List
          */
-        List<Integer> list = new ArrayList<>(Arrays.asList(45, 433, 489, 2323, 45, 5, 77));
-        boolean value = OddNumber.getOddNumber(list);
-        System.out.println("odd number = " + value);
+        OddNumber.main();
+        /**
+         * Integer to Binary
+         */
+        IntegerToBinary.main();
     }
 
     public static void recursiveQuestions() {

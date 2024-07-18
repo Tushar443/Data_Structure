@@ -60,4 +60,17 @@ public class LargestPositiveNumberWithNegativeNumber {
         }
         return max;
     }
+
+    public static void main() {
+        /**
+         * Largest Positive Integer That Exists With Its Negative
+         * Input: nums = [-1,2,-3,3]
+         * Output: 3
+         * Explanation: 3 is the only valid k we can find in the array.
+         */
+        System.out.println("@@@@##################@@@@");
+        int[] nums = new int[]{-49, 8, 19, -39, 37, 22, -39, 4, 37, 8, 20, -2, -4, -5, 14, -14, -27, 24, 30, 3, -12, 19, 22, 28, -3, -6, 6, 22, 37, 27, 16, 27, -6, -49, 31, 29};
+        int resultMax = LargestPositiveNumberWithNegativeNumber.findMaxK(nums);
+        System.out.println("largest number = " + resultMax);
+    }
 }
