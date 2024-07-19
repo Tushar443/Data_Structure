@@ -1,6 +1,7 @@
 package ArraysInterviewQuestions;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class IntegerToBinary {
     public static void main(){
@@ -9,7 +10,6 @@ public class IntegerToBinary {
 
     private static void integerToBinary(int value){
         ArrayList<Integer> arr = new ArrayList<>();
-
         while (value > 0){
             arr.add(value%2);
             value=value/2;

@@ -217,6 +217,8 @@ public class Main {
          * Integer to Binary
          */
         IntegerToBinary.main();
+
+        FindCountOfInteger.main();
     }
 
     public static void recursiveQuestions() {
