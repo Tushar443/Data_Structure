@@ -6,6 +6,7 @@ import LinkedListsInterviewQuestions.SumList;
 import RecursionInterviewQuestions.*;
 import SortingAlgorithms.SortingAlgorithms;
 import StactAndQuesuesInterviewQuestions.InfixToPostFix;
+import StringPractice.LongestCommonPrefix;
 import StringPractice.RemoveStringDuplicate;
 import StringPractice.ReverseString;
 import StringPractice.ReverseStringPrefix;
@@ -19,7 +20,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws Exception {
 //        recursiveQuestions();
-        arrayQuestions();
+//        arrayQuestions();
 //        LinkedListQuestions();
 //        stringQuestion();
 //        collectionQuestions();
@@ -29,7 +30,7 @@ public class Main {
 //        TreesQuestions();
 //        GreedyAlgorithms();
 //        DivideAndConquerAlgo();
-//        DynamicProgramming();
+        DynamicProgramming();
 //        SortingAlgoriths();
     }
 
@@ -38,7 +39,8 @@ public class Main {
     }
 
     private static void DynamicProgramming() {
-        FibonaccoSeriesDynamic.main();
+//        FibonaccoSeriesDynamic.main();
+        FindMinPath.main();
     }
 
     private static void DivideAndConquerAlgo() {
@@ -183,6 +185,8 @@ public class Main {
         RemoveStringDuplicate.main();
 
         ReverseStringPrefix.main();
+
+        LongestCommonPrefix.main();
 
     }
 
