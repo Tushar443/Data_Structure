@@ -6,10 +6,7 @@ import LinkedListsInterviewQuestions.SumList;
 import RecursionInterviewQuestions.*;
 import SortingAlgorithms.SortingAlgorithms;
 import StactAndQuesuesInterviewQuestions.InfixToPostFix;
-import StringPractice.LongestCommonPrefix;
-import StringPractice.RemoveStringDuplicate;
-import StringPractice.ReverseString;
-import StringPractice.ReverseStringPrefix;
+import StringPractice.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -22,7 +19,7 @@ public class Main {
 //        recursiveQuestions();
 //        arrayQuestions();
 //        LinkedListQuestions();
-//        stringQuestion();
+        stringQuestion();
 //        collectionQuestions();
 //        practiceProgram();
 //        StringWithNewKeyWord();
@@ -30,7 +27,7 @@ public class Main {
 //        TreesQuestions();
 //        GreedyAlgorithms();
 //        DivideAndConquerAlgo();
-        DynamicProgramming();
+//        DynamicProgramming();
 //        SortingAlgoriths();
     }
 
@@ -188,6 +185,10 @@ public class Main {
 
         LongestCommonPrefix.main();
 
+        FindMinimumQuaters.main();
+
+        RemoveOuterParentheses.main();
+
     }
 
 
@@ -196,33 +197,35 @@ public class Main {
         /**
          * Missing Num
          */
-        MissingNumbers.main();
+//        MissingNumbers.main();
 
         /**
          * Pair of Sum
          */
-        PairOfSum.main();
+//        PairOfSum.main();
 
         /**
          * Rotate Matrix
          */
-        RotateMatrix.rotateMatrix();
+//        RotateMatrix.rotateMatrix();
 
         /**
          *  Largest Positive Integer That Exists With Its Negative
          */
-        LargestPositiveNumberWithNegativeNumber.main();
+//        LargestPositiveNumberWithNegativeNumber.main();
 
         /**
          * Only Odd Numbers in the List
          */
-        OddNumber.main();
+//        OddNumber.main();
         /**
          * Integer to Binary
          */
-        IntegerToBinary.main();
+//        IntegerToBinary.main();
 
-        FindCountOfInteger.main();
+//        FindCountOfInteger.main();
+
+        FindSumOfProductInArray.main();
     }
 
     public static void recursiveQuestions() {
@@ -270,5 +273,7 @@ public class Main {
          */
 
         TowerOfHanoi.main();
+
+        PowerOfXandN.main();
     }
 }
